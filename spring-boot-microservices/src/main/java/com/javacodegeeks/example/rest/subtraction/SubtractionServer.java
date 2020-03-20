@@ -10,10 +10,12 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @ComponentScan
-public class SubtractionServer {
+public class SubtractionServer 
+{
 	protected Logger logger = Logger.getLogger(SubtractionServer.class.getName());
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		System.setProperty("spring.config.name", "subtraction-server");
 
 		SpringApplication.run(SubtractionServer.class, args);

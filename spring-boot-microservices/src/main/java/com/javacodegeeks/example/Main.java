@@ -5,6 +5,7 @@ import com.javacodegeeks.example.rest.addition.AdditionServer;
 import com.javacodegeeks.example.rest.multiplication.MultiplicationServer;
 import com.javacodegeeks.example.rest.subtraction.SubtractionServer;
 import com.javacodegeeks.example.web.WebServer;
+import com.javacodegeeks.example.zuul.ZuulGateway;
 
 public class Main {
 	public static void main(String[] args) {
@@ -38,6 +39,10 @@ public class Main {
 		{
 			WebServer.main(args);
 		} 
+		else if (serverName.equals("zuul")) 
+		{
+			ZuulGateway.main(args);
+		}
 		else if (serverName.equals("multiplication")) 
 		{
 			MultiplicationServer.main(args);
