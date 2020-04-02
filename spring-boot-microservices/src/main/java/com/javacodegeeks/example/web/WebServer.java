@@ -8,6 +8,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * 
+ * @author  DeArvis Troutman
+ * @version 1.0
+* @since   2020-04-02 
+ */
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(useDefaultFilters = false)
@@ -28,33 +35,33 @@ public class WebServer
 	
 		@LoadBalanced
 		@Bean
-		RestTemplate restTemplate()
+		RestTemplate restTemplate()	// Creates a Bean for RestTemplate so only using one Instance
 		{
 			return new RestTemplate();
 		}
 	
 		@Bean
-		public WebAdditionService additionService()
+		public WebAdditionService additionService() // Creates a Bean for WebAdditionService so only using one Instance
 		{
 			return new WebAdditionService(ADDITION_SERVICE_URL);
 		}
 		
 		
 		@Bean
-		public WebArithmeticController additionController() 
+		public WebArithmeticController additionController() // Creates a Bean for WebArithmeticController so only using one Instance
 		{
 			return new WebArithmeticController( additionService(), subtractionService(), multiplicationService() );
 		}	
 		
 		
 		@Bean
-		public WebSubtractionService subtractionService() 
+		public WebSubtractionService subtractionService()  // Creates a Bean for WebSubtractionService so only using one Instance
 		{
 			return new WebSubtractionService(SUBTRACTION_SERVICE_URL);
 		}
 	
 		@Bean
-		public WebMultiplicationService multiplicationService() 
+		public WebMultiplicationService multiplicationService()  // Creates a Bean for WebMultiplicationService so only using one Instance
 		{
 			return new WebMultiplicationService(MULTIPLICATION_SERVICE_URL);
 		}

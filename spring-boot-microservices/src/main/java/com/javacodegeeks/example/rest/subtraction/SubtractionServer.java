@@ -7,6 +7,14 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
+/**
+* The purpose of this class is to configure the server for the Subtraction Service Application
+* 
+* @author  DeArvis Troutman
+* @version 1.0
+* @since   2020-04-02 
+*/
+
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @ComponentScan

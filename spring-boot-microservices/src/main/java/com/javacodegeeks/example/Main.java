@@ -7,12 +7,26 @@ import com.javacodegeeks.example.rest.subtraction.SubtractionServer;
 import com.javacodegeeks.example.web.WebServer;
 import com.javacodegeeks.example.zuul.ZuulGateway;
 
-public class Main {
-	public static void main(String[] args) {
+
+/**The Main file is for running specific servers/projects in the Microservice.
+ * The following code allows user to run one server at a time, but user can run 
+ * all servers at once through the command line. For commandline use:
+ * " java -jar target/spring-boot-microservices-0.0.1-SNAPSHOT.jar serverName "
+ * 
+*
+* @author  DeArvis Troutman
+* @version 1.0
+* @since   2020-04-02 
+*/
+public class Main
+{
+	public static void main(String[] args) 
+	{
 
 		String serverName = "";
 
-		switch (args.length) {
+		switch (args.length) 
+		{
 		case 2:
 			System.setProperty("server.port", args[1]);
 		case 1:

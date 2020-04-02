@@ -7,6 +7,13 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+/**
+* @author  DeArvis Troutman
+* @version 1.0
+* @since   2020-04-02 
+*/
+
+
 @Service
 public class WebSubtractionService {
 	@Autowired
@@ -24,6 +31,13 @@ public class WebSubtractionService {
 				: "http://" + serviceUrl;
 	}
 
+
+	/**
+	 * Returns URL after addition operation has been applied
+	 * @param minuend
+	 * @param subtrahend
+	 * @return returns object (REST API Call)
+	 */
 	public String subtract(String minuend, String subtrahend) {
 		return restTemplate.getForObject(serviceUrl + "/subtract?minuend={minuend}&subtrahend={subtrahend}", String.class, minuend, subtrahend);
 	}

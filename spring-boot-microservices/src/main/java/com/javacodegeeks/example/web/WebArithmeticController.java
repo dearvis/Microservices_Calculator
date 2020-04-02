@@ -7,6 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * @author  DeArvis Troutman
+ * @version 1.0
+* @since   2020-04-02 
+ */
+
+
 @Controller
 public class WebArithmeticController 
 {
@@ -33,6 +40,15 @@ public class WebArithmeticController
 		this.multiplicationService = multiplicationService;
 	}
 
+	
+
+	/**
+	 * The purpose of this method is to make API Call to Addition Service
+	 * @param addend1
+	 * @param addend2
+	 * @param model
+	 * @return sum 
+	 */
 	@RequestMapping("/add")
 	public String doAdd(@RequestParam(defaultValue="0") String addend1,	@RequestParam(defaultValue="0") String addend2,	Model model) 
 	{
@@ -42,6 +58,15 @@ public class WebArithmeticController
 		return "sum";
 	}
 
+	
+	
+	/**
+	 * The purpose of this method is to make API Call to Subtraction Service
+	 * @param minuend
+	 * @param subtrahend
+	 * @param model
+	 * @return difference
+	 */
 	@RequestMapping("/subtract")
 	public String doSubtract(@RequestParam(defaultValue="0") String minuend, @RequestParam(defaultValue="0") String subtrahend,	Model model) 
 	{
@@ -51,6 +76,14 @@ public class WebArithmeticController
 		return "difference";
 	}
 	
+	
+	/**
+	 * The purpose of this method is to make API Call to Multiplication Service
+	 * @param val_one
+	 * @param val_two
+	 * @param model
+	 * @return product
+	 */
 	@RequestMapping("/multiplication")
 	public String doMultiply(@RequestParam(defaultValue="0") String val_one, @RequestParam(defaultValue="0") String val_two, Model model) 
 	{

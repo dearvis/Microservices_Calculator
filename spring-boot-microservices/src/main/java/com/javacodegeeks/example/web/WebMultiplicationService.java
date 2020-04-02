@@ -7,6 +7,12 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+/**
+* @author  DeArvis Troutman
+* @version 1.0
+* @since   2020-04-02 
+*/
+
 @Service
 public class WebMultiplicationService 
 {
@@ -25,6 +31,13 @@ public class WebMultiplicationService
 				: "http://" + serviceUrl;
 	}
 	
+	
+	/**
+	 * Returns URL after Multiplication operation (REST API Call)
+	 * @param val_one
+	 * @param val_two
+	 * @return returns object 
+	 */
 	public String multiply(String val_one, String val_two)
 	{
 		return restTemplate.getForObject(serviceUrl + "/multiply?val_one={val_one}&val_two={val_two}", String.class, val_one, val_two);
